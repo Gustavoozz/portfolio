@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 export function Button({ icon, children, styles }) {
   return (
     <motion.button
-      whileHover={{ scale: 1.3728461383681368 }}
+      whileHover={{ scale: 1.1 }}
       className={`group relative grid overflow-hidden rounded-xl px-4 py-2 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200 ${styles}`}
     >
       <span>
