@@ -1,10 +1,10 @@
-import { Home } from './Pages/Home';
+import { RoutesPage } from './Routes/routes';
 
 function App() {
   return (
     <main className="App">
       <div className="backgroundGray">
-        <Home />
+        <RoutesPage />
       </div>
     </main>
   );

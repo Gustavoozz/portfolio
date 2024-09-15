@@ -15,7 +15,7 @@ module.exports = {
         },
       },
       backgroundImage : {
-        bkgGradient : "linear-gradient(149deg, #1B1B1F 0%, #1F1F21 52%, #000000 100%)",
+        bkgGradient : "linear-gradient(to right, #1B1B1F 30%, #000000 100%)",
         btnGradient : "linear-gradient(149deg, #0077B6 0%, #6CA6E9 100%)"
     },
         "animation": {
