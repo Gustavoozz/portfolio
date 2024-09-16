@@ -15,3 +15,7 @@ export const SubTitle = (props) => {
 export const Paragraphy = (props) => {
   return <p className={`fontFamily-inter text-xl font-semibold text-mainColors-light ${props.styles}`}>{props.children}</p>
 }
+
+export const TextLink = (props) => {
+  return <a className={`fontFamily-inter text-xl font-semibold text-mainColors-light ${props.styles}`}>{props.children}</a>
+}

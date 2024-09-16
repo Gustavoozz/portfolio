@@ -21,13 +21,16 @@ module.exports = {
         "animation": {
           "flip": "flip 6s infinite steps(2, end)",
           "rotate": "rotate 3s linear infinite both",
-          "text-gradient": "text-gradient 0.5s linear infinite"
+          "text-gradient": "text-gradient 0.5s linear infinite",
+           "shine": "shine 2s linear infinite"
         },
         "keyframes": {
           "flip": {
             "to": {
               "transform": "rotate(360deg)"
             },
+            
+            
             "text-gradient": {
             "to": {
               "backgroundPosition": "200% center"
@@ -39,6 +42,16 @@ module.exports = {
               "transform": "rotate(90deg)"
             }
           },
+          "shine": {
+            "from": {
+              "backgroundPosition": "0 0"
+            },
+            "to": {
+              "backgroundPosition": "-200% 0"
+            }
+          }
+
+          
         },
         
       

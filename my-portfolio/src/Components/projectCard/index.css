@@ -1,0 +1,12 @@
+
+.img-container > div {
+  filter: grayScale(1);
+  transition:
+  scale 0.75s ease-out,
+  filter 0.25s ease-in-out;
+}
+
+.img-container:hover > div {
+  scale: 1.1;
+  filter: grayScale(0);
+}
