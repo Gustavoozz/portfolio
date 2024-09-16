@@ -63,18 +63,18 @@ export const Home = () => {
       {/* Segunda Seção - Ocupa a tela inteira com animação de rolagem */}
       <motion.section
         ref={sectionRef}
-        initial={{ opacity: 0, y: 50 }} 
+        // initial={{ opacity: 0, y: 50 }} 
         animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }} 
         exit={{ opacity: 0, y: 50 }} 
         transition={{ duration: 0.8, type: "spring", stiffness: 50 }}
-        className="h-screen flex items-center justify-center py-16"
+        className="h-screen"
       >
-        <div className="container mx-auto px-4">
-          <Title>projects</Title>
         
+        <div className="flex flex-col justify-center items-center">
+        <Projects />
         </div>
 
-        <Projects />
+        
       </motion.section>
     </main>
   );
