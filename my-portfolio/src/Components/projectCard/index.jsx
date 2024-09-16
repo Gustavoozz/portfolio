@@ -28,7 +28,7 @@ export const ProjectCard = ({ title, description, image, icon }) => {
         {icon}
         </div>
 
-        <div className="mt-2 ">     
+        <div className="mt-2 w-[40%] flex justify-between">     
         <ButtonAccess>
           <TextLink>Code</TextLink>
         </ButtonAccess>

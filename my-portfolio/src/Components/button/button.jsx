@@ -20,8 +20,9 @@ export function Button({ icon, children, styles }) {
 
 export function ButtonAccess({ children, styles }) {
   return (
-    <button className="inline-flex animate-shine items-center justify-center rounded-xl text-sm border border-neutral-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-4 py-2 font-medium text-neutral-400 transition-colors hover:bg-mainColors-white">
+    <button className="inline-flex animate-shine items-center justify-center rounded-xl text-sm border border-neutral-200 bg-[linear-gradient(110deg,#ffffff,45%,#f0f0f0,55%,#ffffff)] bg-[length:200%_100%] px-4 py-2 font-medium text-neutral-900 transition-colors">
     {children}
   </button>
+  
   );
 }

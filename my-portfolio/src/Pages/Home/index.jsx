@@ -19,11 +19,6 @@ export const Home = () => {
     { text: 'Contact Me', icon: <MdEmail size="16" fill="#E7E7E7"/> },
   ];
 
-  // Uso do react-intersection-observer para detectar quando a segunda seção entra em vista
-  const { ref: sectionRef, inView } = useInView({
-    triggerOnce: false, // Permite que a animação seja acionada várias vezes
-    threshold: 0.5, // Proporção da seção visível para disparar o evento
-  });
 
   return (
     <main className="bg-bkgGradient flex flex-col">
@@ -36,6 +31,7 @@ export const Home = () => {
         className="flex flex-col h-screen"
       >
         <Header />
+        
         <div className="flex flex-grow items-center px-8 sm:px-20">
           <motion.div
             initial={{ opacity: 0, y: -50, scale: 0.6 }} 
@@ -61,21 +57,6 @@ export const Home = () => {
       </motion.div>
 
       {/* Segunda Seção - Ocupa a tela inteira com animação de rolagem */}
-      <motion.section
-        ref={sectionRef}
-        // initial={{ opacity: 0, y: 50 }} 
-        animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }} 
-        exit={{ opacity: 0, y: 50 }} 
-        transition={{ duration: 0.8, type: "spring", stiffness: 50 }}
-        className="h-screen"
-      >
-        
-        <div className="flex flex-col justify-center items-center">
-        <Projects />
-        </div>
-
-        
-      </motion.section>
     </main>
   );
 };

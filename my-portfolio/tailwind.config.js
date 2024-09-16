@@ -1,6 +1,11 @@
+const {nextui} = require('@nextui-org/theme');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{jsx,js}", "./index.html"],
+  content: [
+    "./src/**/*.{jsx,js}",
+    "./index.html",
+    "./node_modules/@nextui-org/theme/dist/components/(dropdown|menu|divider|popover|button|ripple|spinner).js"
+  ],
   theme: {
     fontFamily : {
       inter : ["inter", "sans-serif"]
@@ -59,7 +64,6 @@ module.exports = {
   
     },
   },
-  plugins: [
-  ],
+  plugins: [nextui()],
 }
 
