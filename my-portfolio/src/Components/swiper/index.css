@@ -22,19 +22,15 @@
     /* color: #b30000; */
   }
   
-  .swiper {
-    position: relative; /* Necessário para o posicionamento absoluto dos bullets */
-    /* border: 1px solid green */
-  }
-  
-  .swiper-pagination {
+
+  /* .swiper-pagination {
     position: absolute;
-    bottom: 10px; /* Ajuste a distância do fundo conforme necessário */
+    bottom: 10px; 
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+   */
   

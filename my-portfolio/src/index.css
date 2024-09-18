@@ -5,3 +5,10 @@
 * {
     @apply text-mainColors-gray;
 }
+
+@font-face {
+    font-family: "Poppins-Black.ttf";
+    src: url("./assets/fonts/Poppins/Poppins-Black.ttf");
+    font-style: normal;
+    font-display: swap;
+}

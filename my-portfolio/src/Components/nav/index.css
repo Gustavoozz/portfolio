@@ -1,0 +1,12 @@
+.transparent-select {
+  background-color: transparent;
+  border: 1px solid #ffffff; 
+  border-radius: 0.75rem; 
+  padding: 0.5rem; 
+  color: #ffffff; 
+}
+
+
+.transparent-select option {
+  background-color: #fff; 
+}

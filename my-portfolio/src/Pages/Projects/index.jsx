@@ -10,16 +10,16 @@ export const Projects = () => {
   // });
 
   return(
-    <motion.section
-    className="h-screen bg-bkgGradient"
+    <motion.div
+    className="w-full min-h-screen bg-bkgGradient"
   >
     <Header />
     
-    <div className="flex flex-col h-auto">
+    <div className="flex flex-col">
     <SwiperProject />
     </div>
 
     
-  </motion.section>
+  </motion.div>
   )
 }
