@@ -1,3 +1,4 @@
+"use client";
 // import { Button } from '@/components/button/button';
 import { AvatarContainer } from '@/components/avatar/avatar';
 import { Button } from '@/components/button/button';

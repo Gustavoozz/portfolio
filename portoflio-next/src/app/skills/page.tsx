@@ -17,8 +17,7 @@ export const SkillSection = () => {
         spaceBetween={50}
           slidesPerView={7} 
           className='w-[65%]' 
-          // modules={[Navigation]}
-          // navigation={true} 
+          navigation={true} 
         >
           {skills.map((item, index) => (
             <SwiperSlide key={index} style={{ width: 'auto', height: 'auto' }}>

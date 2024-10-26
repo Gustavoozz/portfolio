@@ -1,3 +1,4 @@
+"use client";
 import { AvatarContainer } from '@/components/avatar/avatar'
 import { Paragraph, SubTitle } from '@/components/text/text'
 

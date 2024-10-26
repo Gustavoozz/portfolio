@@ -7,8 +7,6 @@ import { Header } from '@/components/header/header';
 import { AboutSection } from './about/page';
 import { ThemeProvider } from '@/providers/themeProvider';
 
-
-
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
