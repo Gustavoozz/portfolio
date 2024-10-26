@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: linear-gradient(to right, #1B1B1F 30%, #000000 100%);
+    --foreground: #F5EDED;
+  }
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400; 
+  src: url('./fonts/Poppins/Poppins-Regular.ttf') format('truetype'); 
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 700; 
+  src: url('./fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+}
+
+html, body {
+  @apply text-mainColors-gray
+ 
+}
+
+.dark body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+
+::-webkit-scrollbar {
+  width: 5px;
+  background: #000000;
+}
+
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #0077B6; 
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0077B6; 
+}
+
+.swiper-pagination-bullet{
+  background-color: #ffffff;
+  /* color: #b30000; */
+}
+
+
+/* .swiper-pagination {
+  position: absolute;
+  bottom: 10px; 
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ */
+ 
+ .swiper-button-next,
+ .swiper-button-prev {
+   color: #fff; /* Cor das setas */
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   z-index: 10;
+ }
+ 
+ .swiper-button-next {
+   right: 10px; /* Distância do lado direito */
+ }
+ 
+ .swiper-button-prev {
+   left: 10px; /* Distância do lado esquerdo */
+ }
+
+
