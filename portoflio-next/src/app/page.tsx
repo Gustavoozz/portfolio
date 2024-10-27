@@ -1,5 +1,22 @@
-import { redirect } from 'next/navigation';
+import { AboutSection } from '@/components/sections/about/page';
+import HomePage from '@/components/sections/home/page';
+import { SkillSection } from '@/components/sections/skills/page';
+
 
 export default function RootPage() {
-  redirect("/home");
+  const sections = [
+    <HomePage key={Math.random()} />,
+    <SkillSection key={Math.random()} />,
+    <AboutSection key={Math.random()} />
+  ];
+
+  return (
+    <div>
+          {sections.map((section) => (
+        <div key={section.key}>
+          {section}
+        </div>
+      ))}
+    </div>
+  )
 }

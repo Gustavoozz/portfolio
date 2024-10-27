@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import HomePage from './home/page';
-import { SkillSection } from './skills/page';
 import { Header } from '@/components/header/header';
-import { AboutSection } from './about/page';
 import { ThemeProvider } from '@/providers/themeProvider';
 
 const geistSans = localFont({
@@ -25,6 +22,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -35,9 +33,7 @@ export default function RootLayout({
       >
     <ThemeProvider attribute="class" defaultTheme="dark">
       <Header />
-        <HomePage />
-        <SkillSection />
-        <AboutSection />
+        {children}
     </ThemeProvider>
       </body>
     </html>
