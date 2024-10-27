@@ -16,7 +16,7 @@ const HomePage = () => {
   ];
 
   return (
-    <main className="bg-transparent flex flex-col min-h-screen">
+    <main id='home' className="bg-transparent flex flex-col min-h-screen">
      
 
       <div className="flex flex-grow items-center justify-center mt-14 px-8 sm:px-20">

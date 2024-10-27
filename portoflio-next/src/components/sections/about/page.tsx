@@ -3,7 +3,7 @@ import { Paragraph, SubTitle } from '@/components/text/text'
 
 export const AboutSection = () => {
   return (
-    <section id='about' className='w-full h-[550px] '>
+    <section id='about' className='w-full h-[550px] mb-20'>
       <div className='flex flex-col items-center justify-center '>
          <SubTitle styles='font-bold uppercase text-xl mt-10 mb-24'>About me</SubTitle>
 

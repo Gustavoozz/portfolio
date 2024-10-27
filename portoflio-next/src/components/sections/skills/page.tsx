@@ -3,7 +3,7 @@ import { SubTitle } from '@/components/text/text';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { skills } from '@/data/skills';
 import 'swiper/swiper-bundle.css'; 
-// import { Navigation } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 
 export const SkillSection = () => {
   return (
@@ -14,14 +14,16 @@ export const SkillSection = () => {
      
       <div className='flex flex-row justify-center  w-full h-full items-center'>
         <Swiper
+        modules={[ Pagination ]}
         spaceBetween={50}
           slidesPerView={7} 
           className='w-[65%]' 
-          navigation={true} 
+
+          pagination={{ clickable: true }}
         >
           {skills.map((item, index) => (
             <SwiperSlide key={index} style={{ width: 'auto', height: 'auto' }}>
-              <div className='flex flex-col justi fy-center  items-center hover:scale-125  h-28  transition-all duration-700'>
+              <div className='flex flex-col justify-center  items-center hover:scale-125  h-28  transition-all duration-700 mb-10'>
                 {item.icon}
                 <span className='text-sm mt-2'>{item.name}</span>
               </div>

@@ -7,6 +7,13 @@ import ThemeToggle from '../themeSwitch/themeSwitch';
 
 export const Nav = () => {
 
+  const scrollToHome = () => {
+    const section = document.getElementById('home');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const scrollToSkills = () => {
     const section = document.getElementById('skills');
     if (section) {
@@ -16,6 +23,13 @@ export const Nav = () => {
 
   const scrollToAbout = () => {
     const section = document.getElementById('about');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToProjects = () => {
+    const section = document.getElementById('projects');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
@@ -38,7 +52,7 @@ export const Nav = () => {
               whileHover={{ scale: 1.1 }}
               className="nav-item"
             >
-             <TextNav>Home</TextNav>
+             <button onClick={scrollToHome}><TextNav>Home</TextNav></button>
             </motion.li>
 
             <motion.li 
@@ -59,7 +73,7 @@ export const Nav = () => {
               whileHover={{ scale: 1.1 }}
               className="nav-item"
             >
-              <TextNav>Projects</TextNav>
+              <button onClick={scrollToProjects}><TextNav>Projects</TextNav></button>
             </motion.li>
 
             <li>
