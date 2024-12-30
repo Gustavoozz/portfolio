@@ -3,12 +3,13 @@ import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import { FaReact, FaCss3Alt } from 'react-icons/fa';
 import { SiCsharp, SiFramer } from 'react-icons/si';
 import { DiMsqlServer } from 'react-icons/di';
 import { ProjectCard } from '@/components/card/card';
 import { SubTitle } from '@/components/text/text';
+
 
 export const ProjectSection = () => {
   const [projectCard] = useState([
@@ -24,35 +25,39 @@ export const ProjectSection = () => {
         <SiFramer key={Math.random()} fill="#FFFFFF" size="30" />,
         <FaCss3Alt key={Math.random()} fill="#FFFFFF" size="30" />
       ],
+      image: '/images/event-image.png'
     },
     {
       id: 2,
       title: 'To do List',
       description: 'Aplicação para gerenciamento de tarefas.',
-      buttons: ['code'] 
+      buttons: ['code'],
+      image: '/images/todolist-image.png'
     },
     {
       id: 3,
       title: 'TechSchool',
       description: 'Aplicação mobile para gerenciamento de alunos e professores.',
-      buttons: ['code'] 
+      buttons: ['code'],
+      image: '/images/default-image.png'
     },
     {
       id: 4,
       title: 'Tech Connect',
       description: 'Rede social para desenvolvedores e amantes de tecnologia.',
-      buttons: ['code'] 
+      buttons: ['code'],
+      image: '/images/default-image.png'
     }
   ]);
 
   return (
     <div className='flex flex-col'>
-      <div className='w-full h-auto flex justify-center'>
-        <SubTitle styles='font-bold uppercase text-xl mt-20 text-center'>Projetos</SubTitle>
+      <div className='w-full h-[150px] flex justify-center'>
+        <SubTitle styles='font-bold font-poppins text-[34px] mt-20 text-center border-red-500'>Projetos</SubTitle>
       </div>
       <div
         id='projects'
-        className="h-screen flex justify-center items-center"
+        className="h-screen flex ml-20 justify-center items-center"
       >
         <Swiper
           slidesPerView={3}
@@ -60,15 +65,19 @@ export const ProjectSection = () => {
             clickable: true,
             dynamicBullets: true,
           }}
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
           breakpoints={{
             640: {
               slidesPerView: 1,
-              spaceBetween: 10, 
-            },  
+              spaceBetween: 10,
+            },
             768: {
               slidesPerView: 1,
-              spaceBetween: 20, 
+              spaceBetween: 20,
             },
             769: {
               slidesPerView: 2,
@@ -88,7 +97,8 @@ export const ProjectSection = () => {
                   title={item.title}
                   description={item.description}
                   icon={item.icon}
-                  buttons={item.buttons} 
+                  image={item.image}
+                  buttons={item.buttons}
                 />
               </SwiperSlide>
             ))

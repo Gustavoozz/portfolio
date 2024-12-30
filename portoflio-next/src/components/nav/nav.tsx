@@ -4,39 +4,49 @@ import { motion } from 'framer-motion';
 import { TextNav } from '../text/text';
 import ThemeToggle from '../themeSwitch/themeSwitch';
 
-
 export const Nav = () => {
 
   const scrollToHome = () => {
     const section = document.getElementById('home');
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center', // Centraliza a seção no meio da tela
+      });
     }
   };
 
   const scrollToSkills = () => {
     const section = document.getElementById('skills');
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
     }
   };
 
   const scrollToAbout = () => {
     const section = document.getElementById('about');
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
     }
   };
 
   const scrollToProjects = () => {
     const section = document.getElementById('projects');
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
     }
   };
-
   return (
-    <nav 
+    <nav
       className="bg-transparent w-full p-4 px-20"
     >
       <div className="flex justify-between items-center w-full">
@@ -46,34 +56,34 @@ export const Nav = () => {
           </h1>
         </div>
 
-        <div className="p-2 flex justify-end rounded-lg w-[50%]">
+        <div className="p-2 flex justify-end rounded-lg w-[50%] font-medium">
           <ul className="flex gap-8">
-            <motion.li 
+            <motion.li
               whileHover={{ scale: 1.1 }}
               className="nav-item"
             >
-             <button onClick={scrollToHome}><TextNav>Home</TextNav></button>
+              <button onClick={scrollToHome}><TextNav styles='font-poppins'>Home</TextNav></button>
             </motion.li>
 
-            <motion.li 
+            <motion.li
               whileHover={{ scale: 1.1 }}
               className="nav-item"
             >
-              <button onClick={scrollToSkills}><TextNav>Skills</TextNav></button>
+              <button onClick={scrollToSkills}><TextNav styles='font-poppins '>Skills</TextNav></button>
             </motion.li>
 
-            <motion.li 
-              whileHover={{ scale: 1.1 }}
-             className="nav-item"
-            >
-             <button onClick={scrollToAbout}><TextNav>About</TextNav></button>
-            </motion.li>
-
-            <motion.li 
+            <motion.li
               whileHover={{ scale: 1.1 }}
               className="nav-item"
             >
-              <button onClick={scrollToProjects}><TextNav>Projects</TextNav></button>
+              <button onClick={scrollToAbout}><TextNav styles='font-poppins '>Sobre mim</TextNav></button>
+            </motion.li>
+
+            <motion.li
+              whileHover={{ scale: 1.1 }}
+              className="nav-item"
+            >
+              <button onClick={scrollToProjects}><TextNav styles='font-poppins'>Projetos</TextNav></button>
             </motion.li>
 
             <li>

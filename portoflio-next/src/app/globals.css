@@ -23,13 +23,13 @@
 }
 
 html, body {
-  @apply text-mainColors-gray
+  @apply text-mainColors-white
  
 }
 
 .dark body {
   color: var(--foreground);
-  background: var(--background);
+  background: #000000;
 }
 
 
@@ -58,9 +58,10 @@ html, body {
 }
 
 
+
 .swiper-pagination {
   position: absolute;
-  bottom: 10px; 
+  bottom: 20px; 
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -71,7 +72,7 @@ html, body {
  
  .swiper-button-next,
  .swiper-button-prev {
-      display: flex;
+    display: flex;
      position: relative;
      right: -100px;
  }
