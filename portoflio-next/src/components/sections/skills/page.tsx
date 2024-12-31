@@ -29,7 +29,7 @@ export const SkillSection = () => {
             <SwiperSlide key={index} style={{ width: 'auto', height: 'auto' }}>
 
               <motion.div
-                className="flex flex-col justify-center items-center hover:scale-125 h-28 transition-all duration-700 mb-10"
+                className="flex flex-col justify-center items-center border-red-300  h-28  mb-10 "
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{

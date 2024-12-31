@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   description: "Portfolio by Gustavo.",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,10 +32,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-    <ThemeProvider attribute="class" defaultTheme="dark">
-      <Header />
-        {children}
-    </ThemeProvider>
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

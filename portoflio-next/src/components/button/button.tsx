@@ -54,3 +54,24 @@ export const ButtonAccess: React.FC<ButtonAccessProps> = ({ children, styles }) 
 
   );
 }
+
+interface ButtonGoBackProps {
+  onClick: () => void;
+}
+
+export const ButtonGoBack: React.FC<ButtonGoBackProps> = ({ onClick }) => {
+  return (
+    <button
+      onClick={onClick}
+      className="group w-12 hover:w-44 h-12 hover:bg-sky-600 bg-sky-700 rounded text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start gap-2 items-center p-2 pr-6 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:w-6 before:h-6 before:bg-sky-700 before:hover:bg-sky-600 before:rotate-45 fixed bottom-5 left-5 z-50"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-arrow-up"><path d="m5 12 7-7 7 7" /><path d="M12 19V5" /></svg>
+      <span
+        className="origin-left inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all font-poppins"
+      >
+        Voltar ao inicio
+      </span>
+    </button>
+
+  );
+};

@@ -1,4 +1,6 @@
 "use client";
+
+import { ButtonGoBack } from '@/components/button/button';
 import { AboutSection } from '@/components/sections/about/page';
 import HomePage from '@/components/sections/home/page';
 import { ProjectSection } from '@/components/sections/projects/page';
@@ -6,17 +8,29 @@ import { SkillSection } from '@/components/sections/skills/page';
 
 import { motion } from 'framer-motion';
 
+const scrollToHome = () => {
+  const section = document.getElementById('home');
+  if (section) {
+    section.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
+  } else {
+    console.error("Seção com o ID 'home' não encontrada.");
+  }
+};
 
 export default function RootPage() {
   const sections = [
-    <HomePage key={Math.random()} />,
-    <SkillSection key={Math.random()} />,
-    <AboutSection key={Math.random()} />,
-    <ProjectSection key={Math.random()} />
+    <HomePage key="home" />,
+    <SkillSection key="skills" />,
+    <AboutSection key="about" />,
+    <ProjectSection key="projects" />
   ];
 
   return (
     <div>
+      <ButtonGoBack onClick={scrollToHome} />
       {sections.map((section) => (
         <motion.div
           key={section.key}
@@ -28,5 +42,5 @@ export default function RootPage() {
         </motion.div>
       ))}
     </div>
-  )
+  );
 }

@@ -11,7 +11,7 @@ export const Nav = () => {
     if (section) {
       section.scrollIntoView({
         behavior: 'smooth',
-        block: 'center', // Centraliza a seção no meio da tela
+        block: 'center',
       });
     }
   };
