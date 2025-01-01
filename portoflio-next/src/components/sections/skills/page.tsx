@@ -27,19 +27,22 @@ export const SkillSection = () => {
         >
           {skills.map((item, index) => (
             <SwiperSlide key={index} style={{ width: 'auto', height: 'auto' }}>
-
               <motion.div
-                className="flex flex-col justify-center items-center border-red-300  h-28  mb-10 "
+                className="flex flex-col justify-center items-center  h-28 mb-10 "
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
                   delay: index * 0.1,
                   duration: 0.5,
                 }}
+                whileHover={{
+                  scale: 1.1,
+                  transition: { type: "spring", stiffness: 100 },
+                  color: '#0077B6'
+                }}
               >
                 {item.icon}
                 <span className="text-sm mt-2 font-poppins">{item.name}</span>
-
               </motion.div>
             </SwiperSlide>
           ))}

@@ -1,6 +1,7 @@
 "use client";
 
 import { ButtonGoBack } from '@/components/button/button';
+import { Footer } from '@/components/footer/footer';
 import { AboutSection } from '@/components/sections/about/page';
 import HomePage from '@/components/sections/home/page';
 import { ProjectSection } from '@/components/sections/projects/page';
@@ -41,6 +42,7 @@ export default function RootPage() {
           {section}
         </motion.div>
       ))}
+      <Footer />
     </div>
   );
 }
