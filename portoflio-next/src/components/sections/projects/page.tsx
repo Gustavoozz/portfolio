@@ -29,7 +29,7 @@ export const ProjectSection = () => {
     {
       id: 1,
       title: 'Event Plus',
-      description: 'Sistema completo para gestão de eventos, oferecendo funcionalidades avançadas como cadastro de eventos, gerenciamento de usuários e análise de dados.',
+      description: 'Sistema completo para gestão de eventos, oferecendo funcionalidades avançadas como cadastro de eventos e gerenciamento de usuários.',
       buttons: [
         { type: 'code', url: 'https://github.com/Gustavoozz/event-deploy' },
         { type: 'visit', url: 'https://event-deploy-lilac.vercel.app/' },
