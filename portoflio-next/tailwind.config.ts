@@ -15,8 +15,14 @@ module.exports = {
   	},
   	extend: {
   		fontFamily: {
-  			inter: ["inter", "sans-serif"],
-  			poppins: ["Poppins", "sans-serif"]
+  			inter: [
+  				'inter',
+  				'sans-serif'
+  			],
+  			poppins: [
+  				'Poppins',
+  				'sans-serif'
+  			]
   		},
   		colors: {
   			mainColors: {
@@ -24,8 +30,8 @@ module.exports = {
   				blue: '#0077B6',
   				light: '#464647',
   				white: '#E7E7E7',
-					black: '#000000',
-					lightGray: '#F5F5F5'
+  				black: '#000000',
+  				lightGray: '#F5F5F5'
   			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -66,40 +72,50 @@ module.exports = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
+  			},
+  			sidebar: {
+  				DEFAULT: 'hsl(var(--sidebar-background))',
+  				foreground: 'hsl(var(--sidebar-foreground))',
+  				primary: 'hsl(var(--sidebar-primary))',
+  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+  				accent: 'hsl(var(--sidebar-accent))',
+  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+  				border: 'hsl(var(--sidebar-border))',
+  				ring: 'hsl(var(--sidebar-ring))'
   			}
   		},
   		backgroundImage: {
   			bkgGradient: 'linear-gradient(to right, #1B1B1F 30%, #000000 100%)',
   			btnGradient: 'linear-gradient(149deg, #0077B6 0%, #6CA6E9 100%)'
   		},
-  		'animation': {
-  			'flip': 'flip 6s infinite steps(2, end)',
-  			'rotate': 'rotate 3s linear infinite both',
+  		animation: {
+  			flip: 'flip 6s infinite steps(2, end)',
+  			rotate: 'rotate 3s linear infinite both',
   			'text-gradient': 'text-gradient 1.5s linear infinite',
-  			'shine': 'shine 2s linear infinite'
+  			shine: 'shine 2s linear infinite'
   		},
-  		'keyframes': {
-  			'flip': {
-  				'to': {
-  					'transform': 'rotate(360deg)'
+  		keyframes: {
+  			flip: {
+  				to: {
+  					transform: 'rotate(360deg)'
   				},
   				'text-gradient': {
-  					'to': {
-  						'backgroundPosition': '200% center'
+  					to: {
+  						backgroundPosition: '200% center'
   					}
   				}
   			},
-  			'rotate': {
-  				'to': {
-  					'transform': 'rotate(90deg)'
+  			rotate: {
+  				to: {
+  					transform: 'rotate(90deg)'
   				}
   			},
-  			'shine': {
-  				'from': {
-  					'backgroundPosition': '0 0'
+  			shine: {
+  				from: {
+  					backgroundPosition: '0 0'
   				},
-  				'to': {
-  					'backgroundPosition': '-200% 0'
+  				to: {
+  					backgroundPosition: '-200% 0'
   				}
   			}
   		},

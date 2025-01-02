@@ -4,12 +4,14 @@ import { motion } from 'framer-motion'
 
 export const Header = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
+    <motion.header
+      initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      className="w-full h-12 bg-transparent">
+      className="w-full fixed sm:relative top-0 left-0 z-50 bg-transparent"
+    >
       <Nav />
-    </motion.div>
+    </motion.header>
   )
 }
+

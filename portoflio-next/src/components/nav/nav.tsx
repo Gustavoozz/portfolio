@@ -1,104 +1,107 @@
-"use client";
-// import { PiTranslateBold } from "react-icons/pi";
-import { motion } from 'framer-motion';
+'use client';
+import { useState, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { TextNav } from '../text/text';
 import ThemeToggle from '../themeSwitch/themeSwitch';
+import { Menu, X } from 'lucide-react';
 
 export const Nav = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const scrollToHome = () => {
-    const section = document.getElementById('home');
+  const scrollTo = useCallback((id: string) => {
+    console.log(`Scrolling to ${id}`);
+    const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({
         behavior: 'smooth',
-        block: 'center',
+        block: 'start',
       });
     }
-  };
+    setIsMenuOpen(false);
+  }, []);
 
-  const scrollToSkills = () => {
-    const section = document.getElementById('skills');
-    if (section) {
-      section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-      });
-    }
-  };
+  const navItems = [
+    { name: 'Home', id: 'home' },
+    { name: 'Skills', id: 'skills' },
+    { name: 'Sobre mim', id: 'about' },
+    { name: 'Projetos', id: 'projects' },
+  ];
 
-  const scrollToAbout = () => {
-    const section = document.getElementById('about');
-    if (section) {
-      section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-      });
-    }
-  };
-
-  const scrollToProjects = () => {
-    const section = document.getElementById('projects');
-    if (section) {
-      section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-      });
-    }
-  };
-  return (
-    <nav
-      className="bg-transparent w-full p-4 px-20"
+  const NavItem = ({ item, isMobile }: { item: { name: string; id: string }; isMobile: boolean }) => (
+    <motion.li
+      whileHover={isMobile ? {} : { scale: 1.1 }}
+      className="nav-item"
     >
-      <div className="flex justify-between items-center w-full">
+      <button
+        onClick={() => {
+          console.log(`Clicked on ${item.name}`);
+          scrollTo(item.id);
+        }}
+        className="w-full text-left py-2 px-4  rounded transition-colors"
+      >
+        <TextNav styles="font-poppins">{item.name}</TextNav>
+      </button>
+    </motion.li>
+  );
+
+  return (
+    <nav className="w-full p-4 bg-transparent bg-opacity-90 dark:bg-opacity-90 backdrop-blur-sm">
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex-none">
-          <h1 className="font-poppins font-bold text-2xl">
-            GM
-          </h1>
+          <h1 className="font-poppins font-bold text-2xl">GM</h1>
         </div>
 
-        <div className="p-2 flex justify-end rounded-lg w-[50%] font-medium">
+
+        <div className="sm:hidden">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+            className="z-50 relative p-2"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        <div className="hidden sm:flex justify-end rounded-lg font-medium">
           <ul className="flex gap-8">
-            <motion.li
-              whileHover={{ scale: 1.1 }}
-              className="nav-item"
-            >
-              <button onClick={scrollToHome}><TextNav styles='font-poppins'>Home</TextNav></button>
-            </motion.li>
-
-            <motion.li
-              whileHover={{ scale: 1.1 }}
-              className="nav-item"
-            >
-              <button onClick={scrollToSkills}><TextNav styles='font-poppins '>Skills</TextNav></button>
-            </motion.li>
-
-            <motion.li
-              whileHover={{ scale: 1.1 }}
-              className="nav-item"
-            >
-              <button onClick={scrollToAbout}><TextNav styles='font-poppins '>Sobre mim</TextNav></button>
-            </motion.li>
-
-            <motion.li
-              whileHover={{ scale: 1.1 }}
-              className="nav-item"
-            >
-              <button onClick={scrollToProjects}><TextNav styles='font-poppins'>Projetos</TextNav></button>
-            </motion.li>
-
-            <li>
-              <ThemeToggle />
-            </li>
-
-            {/* <div className="relative">
-              <div className="cursor-pointer">
-                <PiTranslateBold size="20" fill="#E7E7E7"/>
-              </div>
-              
-            </div> */}
+            {navItems.map((item) => (
+              <NavItem key={item.id} item={item} isMobile={false} />
+            ))}
+            <li className='mt-2'><ThemeToggle /></li>
           </ul>
         </div>
       </div>
+
+      <AnimatePresence>
+        {isMenuOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="fixed top-16 left-0 right-0 bg-white dark:bg-black shadow-lg z-40 sm:hidden
+                        flex flex-col justify-start py-4 px-4"
+            >
+              <ul className="flex flex-col gap-2">
+                {navItems.map((item) => (
+                  <NavItem key={item.id} item={item} isMobile={true} />
+                ))}
+                <li className="py-2"><ThemeToggle /></li>
+              </ul>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-white dark:bg-black bg-opacity-50 z-30 sm:hidden"
+              onClick={() => setIsMenuOpen(false)}
+            />
+          </>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
+

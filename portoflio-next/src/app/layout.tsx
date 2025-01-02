@@ -15,12 +15,10 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-
 export const metadata: Metadata = {
   title: "Gustavo M.",
   description: "Portfolio by Gustavo.",
 };
-
 
 export default function RootLayout({
   children,
@@ -34,9 +32,12 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
           <Header />
-          {children}
+          <main>
+            {children}
+          </main>
         </ThemeProvider>
       </body>
     </html>
   );
 }
+

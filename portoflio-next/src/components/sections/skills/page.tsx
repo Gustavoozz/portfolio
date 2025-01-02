@@ -22,8 +22,13 @@ export const SkillSection = () => {
             disableOnInteraction: false,
           }}
           spaceBetween={50}
-          slidesPerView={7}
-          className="w-[65%]"
+          slidesPerView={4}
+          breakpoints={{
+            640: {
+              slidesPerView: 7,
+            },
+          }}
+          className="w-[80%] sm:w-[65%]"
         >
           {skills.map((item, index) => (
             <SwiperSlide key={index} style={{ width: 'auto', height: 'auto' }}>
@@ -35,11 +40,7 @@ export const SkillSection = () => {
                   delay: index * 0.1,
                   duration: 0.5,
                 }}
-                whileHover={{
-                  scale: 1.1,
-                  transition: { type: "spring", stiffness: 100 },
-                  color: '#0077B6'
-                }}
+
               >
                 {item.icon}
                 <span className="text-sm mt-2 font-poppins">{item.name}</span>

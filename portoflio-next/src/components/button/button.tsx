@@ -1,5 +1,6 @@
 "use client";
 import { motion } from 'framer-motion'
+import { toast } from 'react-toastify';
 
 interface ButtonProps {
   icon?: React.ReactNode;
@@ -27,7 +28,6 @@ interface ButtonAccessProps {
 
 export const ButtonAccess: React.FC<ButtonAccessProps> = ({ children, styles }) => {
   return (
-
     <button
       className={`bg-white text-center w-40 rounded-2xl h-14 relative text-black text-xl font-semibold group ${styles}`}
       type="button"
@@ -46,9 +46,8 @@ export const ButtonAccess: React.FC<ButtonAccessProps> = ({ children, styles }) 
           ></path>
         </svg>
       </div>
-      <p className="translate-x-2">{children}</p>
+      <p className="translate-x-2 ml-4">{children}</p>
     </button>
-
   );
 }
 
@@ -60,11 +59,11 @@ export const ButtonGoBack: React.FC<ButtonGoBackProps> = ({ onClick }) => {
   return (
     <button
       onClick={onClick}
-      className="group w-12 hover:w-44 h-12 hover:bg-sky-600 bg-sky-700 rounded text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start gap-2 items-center p-2 pr-6 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:w-6 before:h-6 before:bg-sky-700 before:hover:bg-sky-600 before:rotate-45 fixed bottom-5 left-5 z-50"
+      className="hidden sm:flex group w-12 hover:w-44 h-12 hover:bg-sky-400 bg-sky-500 dark:hover:bg-sky-600 dark:bg-sky-700 rounded text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold justify-start gap-2 items-center p-2 pr-6 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:bg-sky-700 before:hover:bg-sky-600 before:rotate-45 fixed bottom-5 left-5 z-50"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-arrow-up"><path d="m5 12 7-7 7 7" /><path d="M12 19V5" /></svg>
       <span
-        className="origin-left inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all font-poppins"
+        className="origin-left inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all font-poppins text-[13px] ml-3 w-full"
       >
         Voltar ao inicio
       </span>
@@ -79,7 +78,7 @@ interface SocialMediaProps {
 
 export const SocialMediaButtons: React.FC<SocialMediaProps> = () => {
   return (
-    <div className="*:transition-all *:duration-300 flex justify-start text-2xl items-center shadow-xl z-10 bg-[#e8e4df] dark:bg-transparent gap-2 p-2 rounded-full">
+    <div className="*:transition-all *:duration-300 flex justify-start text-2xl items-center z-10 bg-transparent gap-2 p-2 rounded-full">
       <a
         href="mailto:gustavonascimento928@gmail.com?subject=Assunto%20do%20E-mail&body=Olá,%20Gustavo!%20Gostaria%20de%20contatar%20você."
         target="_blank"
@@ -120,19 +119,27 @@ export const SocialMediaButtons: React.FC<SocialMediaProps> = () => {
   )
 }
 
+
+const handleDownload = () => {
+  toast.success('Download concluído!');
+};
+
 export const ButtonDownloadCV = () => {
   return (
-    <button
-      className="group/button relative inline-flex items-center justify-center overflow-hidden bg-blue-500/30 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-blue-600/50 border border-white/20 rounded-xl font-poppins mt-0"
+    <a
+      href="/pdf/Currículo - Gustavo Magalhães (2).pdf"
+      download="Currículo - Gustavo Magalhães.pdf"
+      onClick={handleDownload}
+      className="group/button relative inline-flex items-center justify-center overflow-hidden bg-sky-500 dark:bg-blue-500/30 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-blue-600/50 border border-white/20 rounded-xl font-poppins mt-0"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
       <span className="text-lg ml-4">Download CV</span>
       <div
         className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]"
       >
         <div className="relative h-full w-10 bg-white/30"></div>
       </div>
-    </button>
+    </a>
 
   )
 }

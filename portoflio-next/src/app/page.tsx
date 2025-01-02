@@ -6,6 +6,8 @@ import { AboutSection } from '@/components/sections/about/page';
 import HomePage from '@/components/sections/home/page';
 import { ProjectSection } from '@/components/sections/projects/page';
 import { SkillSection } from '@/components/sections/skills/page';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { motion } from 'framer-motion';
 
@@ -42,6 +44,7 @@ export default function RootPage() {
           {section}
         </motion.div>
       ))}
+      <ToastContainer />
       <Footer />
     </div>
   );
