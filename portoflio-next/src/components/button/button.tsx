@@ -29,7 +29,7 @@ interface ButtonAccessProps {
 export const ButtonAccess: React.FC<ButtonAccessProps> = ({ children, styles }) => {
   return (
     <button
-      className={`bg-white text-center w-40 rounded-2xl h-14 relative text-black text-xl font-semibold group ${styles}`}
+      className={`bg-white text-center w-36 sm:w-40 rounded-2xl h-14 relative text-black text-md sm:text-lg font-semibold group ${styles}`}
       type="button"
     >
       <div

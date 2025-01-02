@@ -35,12 +35,12 @@ export const ProjectSection = () => {
         { type: 'visit', url: 'https://event-deploy-lilac.vercel.app/' },
       ],
       icon: [
-        { component: <FaReact className="text-black dark:text-white" size="30" />, name: "React" },
-        { component: <RiJavascriptFill className="text-black dark:text-white" size="30" />, name: "JavaScript" },
-        { component: <SiCsharp className="text-black dark:text-white" size="30" />, name: "C#" },
-        { component: <DiMsqlServer className="text-black dark:text-white" size="30" />, name: "SQL Server" },
-        { component: <SiFramer className="text-black dark:text-white" size="30" />, name: "Framer Motion" },
-        { component: <FaCss3Alt className="text-black dark:text-white" size="30" />, name: "CSS3" },
+        { component: <FaReact className="text-black dark:text-white text-[30px] sm:text-[30px]" />, name: "React" },
+        { component: <RiJavascriptFill className="text-black dark:text-white text-[20px] sm:text-[30px]" />, name: "JavaScript" },
+        { component: <SiCsharp className="text-black dark:text-white text-[30px] sm:text-[30px]" />, name: "C#" },
+        { component: <DiMsqlServer className="text-black dark:text-white text-[30px] sm:text-[30px]" />, name: "SQL Server" },
+        { component: <SiFramer className="text-black dark:text-white text-[30px] sm:text-[30px]" />, name: "Framer Motion" },
+        { component: <FaCss3Alt className="text-black dark:text-white text-[30px] sm:text-[30px]" />, name: "CSS3" },
       ],
       image: '/images/event-image.png'
     },
@@ -52,27 +52,27 @@ export const ProjectSection = () => {
         { type: 'code', url: 'https://github.com/Gustavoozz/toDo-list' }
       ],
       icon: [
-        { component: <FaReact className="text-black dark:text-white" size="30" />, name: "React" },
-        { component: <RiJavascriptFill className="text-black dark:text-white" size="30" />, name: "JavaScript" },
-        { component: <FaCss3Alt className="text-black dark:text-white" size="30" />, name: "CSS3" },
-        { component: <FaHtml5 className="text-black dark:text-white" size="30" />, name: "HTML5" },
+        { component: <FaReact className="text-black dark:text-white text-[30px] sm:text-[30px]" />, name: "React" },
+        { component: <RiJavascriptFill className="text-black dark:text-white text-[30px] sm:text-[30px]" />, name: "JavaScript" },
+        { component: <FaCss3Alt className="text-black dark:text-white text-[30px] sm:text-[30px]" />, name: "CSS3" },
+        { component: <FaHtml5 className="text-black dark:text-white text-[30px] sm:text-[30px]" />, name: "HTML5" },
       ],
       image: '/images/todolist-image.png'
     },
     {
       id: 3,
       title: 'TechSchool',
-      description: 'Aplicativo mobile para gestão de alunos e professores, integrado a um sistema de agenda eficiente, além de gestão de tarefas.',
+      description: 'Aplicativo mobile para gestão de alunos e professores, integrado a um sistema de agenda eficiente, gestão de tarefas e análise gráfica.',
       buttons: [
         { type: 'code', url: 'https://github.com/Gustavoozz/tecschool' }
       ],
       icon: [
-        { component: <LiaReact className="text-black dark:text-white" size="30" />, name: "React Native" },
-        { component: <RiJavascriptFill className="text-black dark:text-white" size="30" />, name: "JavaScript" },
-        { component: <SiStyledcomponents className="text-black dark:text-white" size="40" />, name: "Styled Components" },
-        { component: <PiFileCSharpBold className="text-black dark:text-white" size="30" />, name: "C#" },
-        { component: <VscAzure className="text-black dark:text-white" size="30" />, name: "Azure Services" },
-        { component: <FaGitAlt className="text-black dark:text-white" size="30" />, name: "GIT" },
+        { component: <LiaReact className="text-black dark:text-white text-[30px] sm:text-[30px]" />, name: "React Native" },
+        { component: <RiJavascriptFill className="text-black dark:text-white text-[30px] sm:text-[30px]" />, name: "JavaScript" },
+        { component: <SiStyledcomponents className="text-black dark:text-white text-[30px] sm:text-[30px]" />, name: "Styled Components" },
+        { component: <PiFileCSharpBold className="text-black dark:text-white text-[30px] sm:text-[30px]" />, name: "C#" },
+        { component: <VscAzure className="text-black dark:text-white text-[30px] sm:text-[30px]" />, name: "Azure Services" },
+        { component: <FaGitAlt className="text-black dark:text-white text-[30px] sm:text-[30px]" />, name: "GIT" },
       ],
       image: '/images/techschool-image.png'
     },
@@ -84,13 +84,13 @@ export const ProjectSection = () => {
         { type: 'visit', url: 'https://www.linkedin.com/feed/update/urn:li:activity:7259256883658575873/' }
       ],
       icon: [
-        { component: <FaReact className="text-black dark:text-white" size="30" />, name: "React" },
-        { component: <RiJavascriptFill className="text-black dark:text-white" size="30" />, name: "JavaScript" },
-        { component: <RiTailwindCssFill className="text-black dark:text-white" size="40" />, name: "Tailwind CSS" },
-        { component: <BsFiletypeJson className="text-black dark:text-white" size="30" />, name: "JSON Server" },
-        { component: <VscAzure className="text-black dark:text-white" size="30" />, name: "Azure Services" },
-        { component: <VscAzureDevops className="text-black dark:text-white" size="30" />, name: "Azure DevOps" },
-        { component: <FaGitAlt className="text-black dark:text-white" size="30" />, name: "GIT" },
+        { component: <FaReact className="text-black dark:text-white text-[25px] sm:text-[30px]" />, name: "React" },
+        { component: <RiJavascriptFill className="text-black dark:text-white text-[30px] sm:text-[30px]" />, name: "JavaScript" },
+        { component: <RiTailwindCssFill className="text-black dark:text-white text-[25px] sm:text-[30px]" />, name: "Tailwind CSS" },
+        { component: <BsFiletypeJson className="text-black dark:text-white text-[25px] sm:text-[30px]" />, name: "JSON Server" },
+        { component: <VscAzure className="text-black dark:text-white text-[25px] sm:text-[30px]" />, name: "Azure Services" },
+        { component: <VscAzureDevops className="text-black dark:text-white text-[25px] sm:text-[30px]" />, name: "Azure DevOps" },
+        { component: <FaGitAlt className="text-black dark:text-white text-[25px] sm:text-[30px]" />, name: "GIT" },
       ],
       image: '/images/techconnect-image.png'
     },
@@ -102,33 +102,32 @@ export const ProjectSection = () => {
         { type: 'code', url: 'https://github.com/Gustavoozz/vital_hub' }
       ],
       icon: [
-        { component: <LiaReact className="text-black dark:text-white" size="30" />, name: "React Native" },
-        { component: <RiJavascriptFill className="text-black dark:text-white" size="30" />, name: "JavaScript" },
-        { component: <SiStyledcomponents className="text-black dark:text-white" size="40" />, name: "Styled Components" },
-        { component: <PiFileCSharpBold className="text-black dark:text-white" size="30" />, name: "C#" },
-        { component: <VscAzure className="text-black dark:text-white" size="30" />, name: "Azure Services" },
-        { component: <FaGitAlt className="text-black dark:text-white" size="30" />, name: "GIT" },
-        { component: <DiMsqlServer className="text-black dark:text-white" size="30" />, name: "SQL Server" },
+        { component: <LiaReact className="text-black dark:text-white text-[25px] sm:text-[30px]" />, name: "React Native" },
+        { component: <RiJavascriptFill className="text-black dark:text-white text-[25px] sm:text-[30px]" />, name: "JavaScript" },
+        { component: <SiStyledcomponents className="text-black dark:text-white text-[25px] sm:text-[30px]" />, name: "Styled Components" },
+        { component: <PiFileCSharpBold className="text-black dark:text-white text-[25px] sm:text-[30px]" />, name: "C#" },
+        { component: <VscAzure className="text-black dark:text-white text-[25px] sm:text-[30px]" />, name: "Azure Services" },
+        { component: <FaGitAlt className="text-black dark:text-white text-[25px] sm:text-[30px]" />, name: "GIT" },
+        { component: <DiMsqlServer className="text-black dark:text-white text-[25px] sm:text-[30px]" />, name: "SQL Server" },
       ],
       image: '/images/vitalhub-image.png'
     },
     {
       id: 6,
       title: 'Checkpoint',
-      description: 'Um sistema que viabiliza a administração de estagiários, oferecendo: Controle de frequência, geração de relatórios e análise de métricas via Dashboard.',
+      description: 'Um sistema focado na administração de estagiários, oferecendo: Geração de relatórios, análise de métricas via Dashboard, entre outros.',
       buttons: [
         { type: 'code', url: 'https://github.com/Gustavoozz/checkpoint' }
       ],
       icon: [
-        { component: <SiMongodb className="text-black dark:text-white" size="30" />, name: "Mongo DB" },
-        { component: <BiLogoTypescript className="text-black dark:text-white" size="30" />, name: "TypesScript" },
-        { component: <RiTailwindCssFill className="text-black dark:text-white" size="40" />, name: "Tailwind CSS" },
-        { component: <PiFileCSharpBold className="text-black dark:text-white" size="30" />, name: "C#" },
-        { component: <VscAzure className="text-black dark:text-white" size="30" />, name: "Azure Services" },
-        { component: <FaGitAlt className="text-black dark:text-white" size="30" />, name: "GIT" },
-        { component: <DiMsqlServer className="text-black dark:text-white" size="30" />, name: "SQL Server" },
-        { component: <VscAzureDevops className="text-black dark:text-white" size="30" />, name: "Azure DevOps" },
-        { component: <RiNextjsFill className="text-black dark:text-white" size="30" />, name: "Next JS" },
+        { component: <SiMongodb className="text-black dark:text-white text-[15px] sm:text-[30px]" />, name: "Mongo DB" },
+        { component: <BiLogoTypescript className="text-black dark:text-white text-[20px] sm:text-[30px]" />, name: "TypesScript" },
+        { component: <RiTailwindCssFill className="text-black dark:text-white text-[20px] sm:text-[30px]" />, name: "Tailwind CSS" },
+        { component: <PiFileCSharpBold className="text-black dark:text-white text-[20px] sm:text-[30px]" />, name: "C#" },
+        { component: <VscAzure className="text-black dark:text-white text-[20px] sm:text-[30px]" />, name: "Azure Services" },
+        { component: <FaGitAlt className="text-black dark:text-white text-[20px] sm:text-[30px]" />, name: "GIT" },
+        { component: <DiMsqlServer className="text-black dark:text-white text-[20px] sm:text-[30px]" />, name: "SQL Server" },
+        { component: <RiNextjsFill className="text-black dark:text-white text-[20px] sm:text-[30px]" />, name: "Next JS" },
       ],
       image: '/images/checkpoint-image.png'
     },
@@ -142,7 +141,7 @@ export const ProjectSection = () => {
       </div>
       <div
         id='projects'
-        className="h-screen flex ml-6 sm:ml-20 justify-center items-center"
+        className="h-full flex ml-0  sm:ml-20 justify-center items-center"
       >
         <Swiper
           slidesPerView={1}
@@ -169,7 +168,7 @@ export const ProjectSection = () => {
               spaceBetween: 30,
             },
           }}
-          className="h-[100%] sm:h-[70%] mb-10"
+          className="h-[100%] sm:h-[100%] mb-10"
         >
           {projectCard.length > 0 ? (
             projectCard.map((item) => (
