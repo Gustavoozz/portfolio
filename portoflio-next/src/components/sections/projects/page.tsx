@@ -169,11 +169,11 @@ export const ProjectSection = () => {
               spaceBetween: 30,
             },
           }}
-          className="h-[70%] mb-10"
+          className="h-[100%] sm:h-[70%] mb-10"
         >
           {projectCard.length > 0 ? (
             projectCard.map((item) => (
-              <SwiperSlide key={item.id} className="flex justify-center mb-10">
+              <SwiperSlide key={item.id} className="flex justify-center mb-0 sm:mb-10">
                 <ProjectCard
                   title={item.title}
                   description={item.description}

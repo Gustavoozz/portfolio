@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
           <Header />
-          <main>
+          <main className='pt-4 sm:pt-0'>
             {children}
           </main>
         </ThemeProvider>
