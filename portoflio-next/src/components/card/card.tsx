@@ -31,10 +31,9 @@ export const ProjectCard: React.FC<CardProps> = ({ title, description, icon, ima
               <Image
                 src={image}
                 alt={title}
-                width={384}
-                height={216}
-                className="rounded-xl object-cover w-full h-full"
-                layout="responsive"
+                className="rounded-xl object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             )}
           </div>
