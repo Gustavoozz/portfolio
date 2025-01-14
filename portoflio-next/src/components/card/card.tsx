@@ -4,6 +4,7 @@ import { TextLink } from '../text/text';
 import Image from 'next/image';
 import TooltipComponent from '@/components/tooltipComponent';
 
+
 interface Button {
   type: string;
   url: string;

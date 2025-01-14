@@ -17,12 +17,17 @@ const HomePage = () => {
     <main id='home' className="bg-transparent flex flex-col min-h-screen">
       <div className="flex flex-grow items-center justify-center mt-14 px-8 sm:px-20">
         <div className="flex flex-col gap-4 items-center">
-          <AvatarContainer />
+          <AvatarContainer
+            width={250}
+            height={250}
+            image='/images/real-photo.jpg'
+            tooltipText="Olha eu aqui!"
+          />
           <SocialMediaButtons />
           <Title>Olá, eu sou Gustavo Magalhães e sou</Title>
           <SubTitle>Desenvolvedor Fullstack.</SubTitle>
           <Paragraph styles="w-full max-w-screen-md">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lectus sem, mattis et vulputate non, semper eget ligula. Pellentesque neque quam, ultricies non vehicula eget, posuere quis tellus...
+            Eu sou Gustavo, tenho 19 anos e sou apaixonado por tecnologia. Atuo nas áreas de front-end e back-end, sempre buscando aprender mais. Estou aberto a novos desafios e pronto para colaborar em projetos incríveis que envolvam desenvolvimento e inovação na área de tecnologia...
           </Paragraph>
 
           <ButtonDownloadCV />

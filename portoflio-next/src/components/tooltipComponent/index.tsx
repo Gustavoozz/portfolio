@@ -33,12 +33,12 @@ const TooltipComponent = ({ text, maxLength = 10, triggerClassName, children }: 
         <TooltipTrigger
           className={tooltipTriggerStyles({
             isTruncated: isTextoMaiorQueOEsperado,
-            className: triggerClassName, // Permite adicionar classes externas
+            className: triggerClassName,
           })}
         >
-          {children} {/* Aqui é onde o conteúdo (como ícone) será passado */}
+          {children}
         </TooltipTrigger>
-        <TooltipContent className="font-poppins text-dark dark:text-white">
+        <TooltipContent className="font-poppins text-dark dark:text-white !mr-0">
           {text}
         </TooltipContent>
       </Tooltip>

@@ -80,14 +80,21 @@ export const Nav = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="fixed top-16 left-0 right-0 bg-white dark:bg-black shadow-lg z-40 sm:hidden
-                        flex flex-col justify-start py-4 px-4"
+              className="fixed top-16 right-0 w-[40%] bg-white dark:bg-black shadow-lg z-40 sm:hidden
+                   flex flex-col justify-end py-4 px-4"
             >
-              <ul className="flex flex-col gap-2">
+              <ul className="flex flex-col gap-2 items-end">
                 {navItems.map((item) => (
-                  <NavItem key={item.id} item={item} isMobile={true} />
+                  <NavItem
+                    key={item.id}
+                    item={item}
+                    isMobile={true}
+                    onClick={() => setIsMenuOpen(false)}
+                  />
                 ))}
-                <li className="py-2"><ThemeToggle /></li>
+                <li className="mr-16">
+                  <ThemeToggle />
+                </li>
               </ul>
             </motion.div>
             <motion.div
@@ -101,6 +108,7 @@ export const Nav = () => {
           </>
         )}
       </AnimatePresence>
+
     </nav>
   );
 };

@@ -136,12 +136,12 @@ export const ProjectSection = () => {
 
   return (
     <div className='flex flex-col'>
-      <div className='w-full h-[150px] flex justify-center'>
-        <SubTitle styles='font-bold font-poppins text-[34px] mt-20 text-center border-red-500'>Projetos</SubTitle>
+      <div className='w-full h-[150px] flex justify-center mb-0 sm:mb-12 '>
+        <SubTitle styles='font-bold font-poppins text-[34px] mt-20 text-center'>Projetos</SubTitle>
       </div>
       <div
         id='projects'
-        className="h-full flex ml-0  sm:ml-20 justify-center items-center"
+        className="h-full flex ml-0 sm:ml-20 justify-center items-center"
       >
         <Swiper
           slidesPerView={1}
