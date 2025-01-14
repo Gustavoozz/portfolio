@@ -27,7 +27,15 @@ export const Nav = () => {
     { name: 'Projetos', id: 'projects' },
   ];
 
-  const NavItem = ({ item, isMobile }: { item: { name: string; id: string }; isMobile: boolean }) => (
+  const NavItem = ({
+    item,
+    isMobile,
+    onClick,
+  }: {
+    item: { name: string; id: string };
+    isMobile: boolean;
+    onClick?: () => void;
+  }) => (
     <motion.li
       whileHover={isMobile ? {} : { scale: 1.1 }}
       className="nav-item"
@@ -35,6 +43,7 @@ export const Nav = () => {
       <button
         onClick={() => {
           console.log(`Clicked on ${item.name}`);
+          if (onClick) onClick(); // Chamando o onClick se for passado
           scrollTo(item.id);
         }}
         className="w-full text-left py-2 px-4  rounded transition-colors"
@@ -51,7 +60,6 @@ export const Nav = () => {
           <h1 className="font-poppins font-bold text-2xl">GM</h1>
         </div>
 
-
         <div className="sm:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -65,9 +73,9 @@ export const Nav = () => {
         <div className="hidden sm:flex justify-end rounded-lg font-medium">
           <ul className="flex gap-8">
             {navItems.map((item) => (
-              <NavItem key={item.id} item={item} isMobile={false} />
+              <NavItem key={item.id} item={item} isMobile={false} onClick={() => setIsMenuOpen(false)} />
             ))}
-            <li className='mt-2'><ThemeToggle /></li>
+            <li className="mt-2"><ThemeToggle /></li>
           </ul>
         </div>
       </div>
@@ -108,8 +116,6 @@ export const Nav = () => {
           </>
         )}
       </AnimatePresence>
-
     </nav>
   );
 };
-
