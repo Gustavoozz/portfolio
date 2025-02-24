@@ -43,7 +43,7 @@ export const Nav = () => {
       <button
         onClick={() => {
           console.log(`Clicked on ${item.name}`);
-          if (onClick) onClick(); // Chamando o onClick se for passado
+          if (onClick) onClick();
           scrollTo(item.id);
         }}
         className="w-full text-left py-2 px-4  rounded transition-colors"
@@ -54,7 +54,7 @@ export const Nav = () => {
   );
 
   return (
-    <nav className="w-full p-4 bg-transparent bg-opacity-90 dark:bg-opacity-90 backdrop-blur-sm">
+    <nav className="w-full p-2 sm:p-4 bg-transparent bg-opacity-90 dark:bg-opacity-90">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex-none">
           <h1 className="font-poppins font-bold text-2xl">GM</h1>
@@ -70,50 +70,36 @@ export const Nav = () => {
           </button>
         </div>
 
-        <div className="hidden sm:flex justify-end rounded-lg font-medium">
-          <ul className="flex gap-8">
+        <div className="hidden sm:flex justify-end font-medium">
+          <ul className="flex gap-8 ">
             {navItems.map((item) => (
               <NavItem key={item.id} item={item} isMobile={false} onClick={() => setIsMenuOpen(false)} />
             ))}
-            <li className="mt-2"><ThemeToggle /></li>
+            <li className="mt-0 "><ThemeToggle /></li>
           </ul>
         </div>
       </div>
 
       <AnimatePresence>
         {isMenuOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="fixed top-16 right-0 w-[40%] bg-white dark:bg-black shadow-lg z-40 sm:hidden
-                   flex flex-col justify-end py-4 px-4"
-            >
-              <ul className="flex flex-col gap-2 items-end">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 50 }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-0 right-0 h-screen w-[50%] z-40 bg-mainColors-lightGray dark:bg-black sm:hidden"
+          >
+            <div className="h-full px-4 flex flex-col justify-start py-12">
+              <ul className="flex flex-col gap-4">
                 {navItems.map((item) => (
-                  <NavItem
-                    key={item.id}
-                    item={item}
-                    isMobile={true}
-                    onClick={() => setIsMenuOpen(false)}
-                  />
+                  <NavItem key={item.id} item={item} isMobile={true} onClick={() => setIsMenuOpen(false)} />
                 ))}
-                <li className="mr-16">
+                <li className=''>
                   <ThemeToggle />
                 </li>
               </ul>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-white dark:bg-black bg-opacity-50 z-30 sm:hidden"
-              onClick={() => setIsMenuOpen(false)}
-            />
-          </>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </nav>

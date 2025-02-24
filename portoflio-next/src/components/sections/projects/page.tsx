@@ -136,13 +136,12 @@ export const ProjectSection = () => {
 
   return (
     <div className='flex flex-col'>
-      <div className='w-full h-[150px] flex justify-center mb-0 sm:mb-12 '>
-        <SubTitle styles='font-bold font-poppins text-[34px] mt-20 text-center'>Projetos</SubTitle>
+      <div className='w-full h-[150px] flex justify-center mb-0 sm:mb-12'>
+        <SubTitle styles='font-bold font-poppins text-[34px] mt-20 text-center'>
+          Projetos
+        </SubTitle>
       </div>
-      <div
-        id='projects'
-        className="h-full flex ml-0 sm:ml-20 justify-center items-center"
-      >
+      <div id='projects' className='h-full flex ml-0 w-full'>
         <Swiper
           slidesPerView={1}
           modules={[Pagination, Autoplay]}
@@ -151,39 +150,29 @@ export const ProjectSection = () => {
             disableOnInteraction: false,
           }}
           breakpoints={{
-            640: {
-              slidesPerView: 3,
-              spaceBetween: 10,
-            },
-            768: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            769: {
-              slidesPerView: 2,
-              spaceBetween: 30,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
+            640: { slidesPerView: 3, spaceBetween: 10 },
+            768: { slidesPerView: 1, spaceBetween: 20 },
+            769: { slidesPerView: 2, spaceBetween: 30 },
+            1024: { slidesPerView: 3, spaceBetween: 30 },
           }}
-          className="h-[100%] sm:h-[100%] mb-10"
+          className='h-full flex items-center justify-center'
         >
           {projectCard.length > 0 ? (
             projectCard.map((item) => (
-              <SwiperSlide key={item.id} className="flex justify-center mb-0 sm:mb-10">
-                <ProjectCard
-                  title={item.title}
-                  description={item.description}
-                  icon={item.icon}
-                  image={item.image}
-                  buttons={item.buttons}
-                />
+              <SwiperSlide key={item.id} className='h-full flex items-center justify-center '>
+                <div className='flex items-center justify-center h-full w-full'>
+                  <ProjectCard
+                    title={item.title}
+                    description={item.description}
+                    icon={item.icon}
+                    image={item.image}
+                    buttons={item.buttons}
+                  />
+                </div>
               </SwiperSlide>
             ))
           ) : (
-            <SwiperSlide className="flex justify-center items-center">
+            <SwiperSlide className='h-full flex items-center justify-center'>
               <div>Sem projetos disponíveis</div>
             </SwiperSlide>
           )}
