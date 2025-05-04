@@ -1,7 +1,8 @@
 // import { Button } from '@/components/button/button';
 import { AvatarContainer } from '@/components/avatar/avatar';
 import { ButtonDownloadCV, SocialMediaButtons } from '@/components/button/button';
-import { Paragraph, SubTitle, Title } from '@/components/text/text';
+import { ParagraphTypeWriter, SubTitle, Title } from '@/components/text/text';
+import { Typewriter } from 'react-simple-typewriter';
 // import { MdEmail } from "react-icons/md";
 // import { Projects } from '../projects/page';
 // import { IoLocationOutline } from "react-icons/io5";
@@ -26,9 +27,23 @@ const HomePage = () => {
           <SocialMediaButtons />
           <Title>Olá, eu sou Gustavo Magalhães e sou</Title>
           <SubTitle>Desenvolvedor Fullstack.</SubTitle>
-          <Paragraph styles="w-full max-w-screen-md">
+          {/* <Paragraph styles="w-full max-w-screen-md">
             Eu sou Gustavo, tenho 19 anos e sou apaixonado por tecnologia. Atuo nas áreas de front-end e back-end, sempre buscando aprender mais. Estou aberto a novos desafios e pronto para colaborar em projetos incríveis que envolvam desenvolvimento e inovação na área de tecnologia...
-          </Paragraph>
+          </Paragraph> */}
+          <ParagraphTypeWriter styles="w-full max-w-screen-md w-screen h-16">
+            <span>
+              <Typewriter
+                words={[' Eu sou Gustavo, tenho 20 anos e sou apaixonado por tecnologia.', 'Atuo nas áreas de front-end e back-end, sempre buscando aprender mais.', ' Estou aberto a novos desafios e pronto para colaborar em projetos incríveis na área de tecnologia...']}
+                loop={false}
+                cursor
+                cursorStyle='_'
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </span>
+
+          </ParagraphTypeWriter>
 
           <ButtonDownloadCV />
 

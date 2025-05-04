@@ -23,7 +23,7 @@ export const Nav = () => {
   const navItems = [
     { name: 'Home', id: 'home' },
     { name: 'Skills', id: 'skills' },
-    { name: 'Sobre mim', id: 'about' },
+    // { name: 'Sobre mim', id: 'about' },
     { name: 'Projetos', id: 'projects' },
   ];
 
@@ -71,11 +71,11 @@ export const Nav = () => {
         </div>
 
         <div className="hidden sm:flex justify-end font-medium">
-          <ul className="flex gap-8 ">
+          <ul className="flex gap-8">
             {navItems.map((item) => (
               <NavItem key={item.id} item={item} isMobile={false} onClick={() => setIsMenuOpen(false)} />
             ))}
-            <li className="mt-0 "><ThemeToggle /></li>
+            <li className="mt-2"><ThemeToggle /></li>
           </ul>
         </div>
       </div>

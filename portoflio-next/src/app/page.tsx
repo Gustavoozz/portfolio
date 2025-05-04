@@ -2,7 +2,7 @@
 
 import { ButtonGoBack } from '@/components/button/button';
 import { Footer } from '@/components/footer/footer';
-import { AboutSection } from '@/components/sections/about/page';
+// import { AboutSection } from '@/components/sections/about/page';
 import HomePage from '@/components/sections/home/page';
 import { ProjectSection } from '@/components/sections/projects/page';
 import { SkillSection } from '@/components/sections/skills/page';
@@ -27,7 +27,7 @@ export default function RootPage() {
   const sections = [
     <HomePage key="home" />,
     <SkillSection key="skills" />,
-    <AboutSection key="about" />,
+    // <AboutSection key="about" />,
     <ProjectSection key="projects" />
   ];
 
