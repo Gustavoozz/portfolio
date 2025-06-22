@@ -1,39 +1,62 @@
-"use client";
+"use client"
 
-import { useEffect, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadFull } from "tsparticles";
-import type { Engine } from "@tsparticles/engine";
+import { useEffect, useState } from "react"
+import Particles, { initParticlesEngine } from "@tsparticles/react"
+import { loadFull } from "tsparticles"
+import type { Engine } from "@tsparticles/engine"
+import type { ISourceOptions } from "@tsparticles/engine"
 
 export default function ParticlesBackground() {
-  const [isDark, setIsDark] = useState(true);
+  const [init, setInit] = useState(false)
+  const [isDark, setIsDark] = useState(true)
 
   useEffect(() => {
-    const html = document.documentElement;
+    const html = document.documentElement
     const observer = new MutationObserver(() => {
-      setIsDark(html.classList.contains("dark"));
-    });
-    observer.observe(html, { attributes: true, attributeFilter: ["class"] });
-    setIsDark(html.classList.contains("dark"));
-    return () => observer.disconnect();
-  }, []);
+      setIsDark(html.classList.contains("dark"))
+    })
+    observer.observe(html, { attributes: true, attributeFilter: ["class"] })
+    setIsDark(html.classList.contains("dark"))
+    return () => observer.disconnect()
+  }, [])
 
-  initParticlesEngine(async (engine: Engine) => {
-    await loadFull(engine);
-  });
+  useEffect(() => {
+    initParticlesEngine(async (engine: Engine) => {
+      await loadFull(engine)
+    }).then(() => {
+      setInit(true)
+    })
+  }, [])
 
-  const options = {
-    fullScreen: { enable: true, zIndex: -1 },
-    background: { color: "transparent" },
+  const options: ISourceOptions = {
+    fullScreen: {
+      enable: true,
+      zIndex: -1,
+    },
+    background: {
+      color: "transparent",
+    },
     particles: {
       number: {
         value: 100,
-        density: { enable: true, area: 800 },
+        density: {
+          enable: true,
+          width: 1920,
+          height: 1080,
+        },
       },
-      color: { value: isDark ? "#ffffff" : "#888888" },
-      shape: { type: "circle" },
-      opacity: { value: 0.8, random: true },
-      size: { value: 1.2, random: { enable: true, minimumValue: 0.5 } },
+      color: {
+        value: isDark ? "#ffffff" : "#888888",
+      },
+      shape: {
+        type: "circle",
+      },
+      opacity: {
+        value: { min: 0.3, max: 0.8 },
+      },
+      size: {
+        value: { min: 0.5, max: 1.2 },
+      },
       move: {
         enable: true,
         speed: 0.9,
@@ -48,11 +71,19 @@ export default function ParticlesBackground() {
     interactivity: {
       detectsOn: "canvas",
       events: {
-        onHover: { enable: false },
-        onClick: { enable: false },
+        onHover: {
+          enable: false,
+        },
+        onClick: {
+          enable: false,
+        },
       },
     },
-  };
+  }
 
-  return <Particles id="tsparticles" options={options} />;
+  if (!init) {
+    return null
+  }
+
+  return <Particles id="tsparticles" options={options} />
 }
