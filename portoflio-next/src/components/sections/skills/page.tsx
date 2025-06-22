@@ -90,6 +90,7 @@ export const SkillSection = () => {
 
   return (
     <motion.section
+      data-aos="fade-down-left"
       id="skills"
       className="w-full h-[385px] mt-24"
       initial={{ opacity: 0, y: 50 }}
@@ -97,7 +98,7 @@ export const SkillSection = () => {
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
       <div className="flex justify-center">
-        <SubTitle styles="font-bold font-poppins text-[34px]">Experiência com...</SubTitle>
+        <SubTitle styles="font-bold font-poppins text-[34px] mb-12">Experiência com...</SubTitle>
       </div>
 
       <div className="flex flex-row justify-center w-full h-full items-center">
@@ -119,7 +120,7 @@ export const SkillSection = () => {
           {skills.map((item, index) => (
             <SwiperSlide key={index} style={{ width: 'auto', height: 'auto' }}>
               <motion.div
-                className="flex flex-col justify-center items-center h-28 mb-10 cursor-pointer"
+                className="flex flex-col justify-center items-center h-28 mb-12 cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 whileHover={{

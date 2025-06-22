@@ -133,51 +133,74 @@ export const ProjectSection = () => {
     },
   ]);
 
-
   return (
-    <div className='flex flex-col'>
-      <div className='w-full h-[150px] flex justify-center mb-0 sm:mb-12'>
-        <SubTitle styles='font-bold font-poppins text-[34px] mt-20 text-center'>
+    <div className="flex flex-col">
+      <div className="w-full h-[150px] flex justify-center mb-0 sm:mb-12">
+        <SubTitle styles="font-bold font-poppins text-[34px] mt-20 text-center">
           Projetos
         </SubTitle>
       </div>
-      <div id='projects' className='h-full flex ml-0 w-full'>
+
+      <div id="projects" className="h-full w-full flex justify-center">
         <Swiper
-          slidesPerView={1}
+          slidesPerView={3}
+          centeredSlides={true}
+          spaceBetween={50}
+          loop={true}
           modules={[Pagination, Autoplay]}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          className="w-[90%] custom-swiper "
           breakpoints={{
-            640: { slidesPerView: 3, spaceBetween: 10 },
-            768: { slidesPerView: 1, spaceBetween: 20 },
-            769: { slidesPerView: 2, spaceBetween: 30 },
-            1024: { slidesPerView: 3, spaceBetween: 30 },
+            0: {
+              slidesPerView: 1,
+              centeredSlides: false,
+              loop: false,
+              spaceBetween: 10,
+            },
+            640: {
+              slidesPerView: 3,
+              centeredSlides: true,
+              loop: true,
+              spaceBetween: 50,
+            },
           }}
-          className='h-full flex items-center justify-center'
         >
+
           {projectCard.length > 0 ? (
             projectCard.map((item) => (
-              <SwiperSlide key={item.id} className='h-full flex items-center justify-center '>
-                <div className='flex items-center justify-center h-full w-full'>
-                  <ProjectCard
-                    title={item.title}
-                    description={item.description}
-                    icon={item.icon}
-                    image={item.image}
-                    buttons={item.buttons}
-                  />
-                </div>
+              <SwiperSlide
+                key={item.id}
+                className="custom-slide  w-[100%] sm:w-[500px] h-full flex items-center justify-center"
+              >
+                <ProjectCard
+                  title={item.title}
+                  description={item.description}
+                  icon={item.icon}
+                  image={item.image}
+                  buttons={item.buttons}
+                />
               </SwiperSlide>
             ))
           ) : (
-            <SwiperSlide className='h-full flex items-center justify-center'>
+            <SwiperSlide className="h-full flex items-center justify-center">
               <div>Sem projetos disponíveis</div>
             </SwiperSlide>
           )}
         </Swiper>
       </div>
-    </div>
+
+      <style jsx global>{`
+  .custom-swiper .swiper-slide {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+
+  .custom-swiper .swiper-slide.swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+`}</style>
+    </div >
   );
 };

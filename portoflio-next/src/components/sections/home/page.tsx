@@ -16,7 +16,7 @@ const HomePage = () => {
 
   return (
     <main id='home' className="bg-transparent flex flex-col min-h-screen">
-      <div className="flex flex-grow items-center justify-center mt-14 px-8 sm:px-20">
+      <div className="flex flex-grow items-center justify-center mt-4 px-8 sm:px-20">
         <div className="flex flex-col gap-4 items-center">
           <AvatarContainer
             width={250}
@@ -24,7 +24,12 @@ const HomePage = () => {
             image='/images/real-photo.jpg'
             tooltipText="Olha eu aqui!"
           />
-          <SocialMediaButtons />
+          <div className='flex gap-5 flex-row'>
+            <SocialMediaButtons />
+            <ButtonDownloadCV />
+          </div>
+
+
           <Title>Olá, eu sou Gustavo Magalhães e sou</Title>
           <SubTitle>Desenvolvedor Fullstack.</SubTitle>
           {/* <Paragraph styles="w-full max-w-screen-md">
@@ -45,7 +50,7 @@ const HomePage = () => {
 
           </ParagraphTypeWriter>
 
-          <ButtonDownloadCV />
+
 
           {/* <div className='flex mt-2 gap-2'>
           <IoLocationOutline size="24" fill="#E7E7E7"/>
