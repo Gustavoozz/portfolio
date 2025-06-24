@@ -3,7 +3,14 @@ import { ButtonAccess } from '../button/button';
 import { TextLink } from '../text/text';
 import Image from 'next/image';
 import TooltipComponent from '@/components/tooltipComponent';
+import "./card.css"
 
+import { skills } from "@/data/skills";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import { motion } from "framer-motion";
+import "swiper/css";
+import "swiper/css/pagination";
 
 interface Button {
   type: string;
@@ -71,3 +78,36 @@ export const ProjectCard: React.FC<CardProps> = ({ title, description, icon, ima
   );
 };
 
+
+const grouped = {
+  "Front-end": skills.filter((s) => s.category === "Front-end"),
+  "Back-end": skills.filter((s) => s.category === "Back-end"),
+  "Outros": skills.filter((s) => s.category === "Outros"),
+};
+
+export const SkillsCard = () => {
+  return (
+    <div className="w-[80%] px-4 sm:px-0 flex flex-col justify-center items-center">
+      {Object.entries(grouped).map(([category, skills]) => (
+        <div key={category} className="mb-16 flex flex-col justify-center items-center">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 font-poppins text-white">{category}</h2>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            {skills.map((skill, index) => (
+              <div key={index} className="card">
+               <div className="card2 flex flex-col items-center justify-center 
+                text-black bg-white 
+                dark:text-white dark:bg-[#101314]
+                rounded-xl shadow-md p-4">
+
+                  <div className="text-3xl mb-2">{skill.icon}</div>
+                  <span className="text-sm text-center font-poppins">{skill.name}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};

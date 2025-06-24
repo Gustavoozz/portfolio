@@ -2,10 +2,9 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { AvatarContainer } from '@/components/avatar/avatar';
 import { Paragraph, SubTitle } from '@/components/text/text';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { skills } from '@/data/skills';
 import 'swiper/swiper-bundle.css';
-import { Autoplay, Pagination } from 'swiper/modules';
+import { SkillsCard } from '@/components/card/card';
+import AOS from 'aos';
 
 export const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,6 +24,14 @@ export const AboutSection = () => {
     window.addEventListener('scroll', handleScroll);
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+   useEffect(() => {
+    AOS.init({
+      duration: 800,  
+      easing: 'ease-out-cubic', 
+      once: true, 
+    });
   }, []);
 
   return (
@@ -89,57 +96,21 @@ export const SkillSection = () => {
   }, []);
 
   return (
-    <motion.section
-      data-aos="fade-down-left"
-      id="skills"
-      className="w-full h-[385px] mt-24"
-      initial={{ opacity: 0, y: 50 }}
-      animate={isVisible ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
-    >
-      <div className="flex justify-center">
-        <SubTitle styles="font-bold font-poppins text-[34px] mb-12">Experiência com...</SubTitle>
-      </div>
+  <motion.section
+  id="skills"
+  className="flex flex-col justify-center items-center w-full min-h-screen py-24"
+  initial={{ opacity: 0, y: 50 }}
+  animate={isVisible ? { opacity: 1, y: 0 } : {}}
+  transition={{ duration: 0.8, ease: 'easeOut' }}
+>
+  <div data-aos="fade-up" className="flex justify-center items-center">
+    <SubTitle styles="font-bold font-poppins text-[34px] mb-24">Experiência com...</SubTitle>
+  </div>
 
-      <div className="flex flex-row justify-center w-full h-full items-center">
-        <Swiper
-          modules={[Pagination, Autoplay]}
-          autoplay={{
-            delay: 1500,
-            disableOnInteraction: false,
-          }}
-          spaceBetween={50}
-          slidesPerView={4}
-          breakpoints={{
-            640: {
-              slidesPerView: 7,
-            },
-          }}
-          className="w-[80%] sm:w-[65%]"
-        >
-          {skills.map((item, index) => (
-            <SwiperSlide key={index} style={{ width: 'auto', height: 'auto' }}>
-              <motion.div
-                className="flex flex-col justify-center items-center h-28 mb-12 cursor-pointer"
-                initial={{ opacity: 0, y: 20 }}
-                animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                whileHover={{
-                  scale: 1.2
-                }}
-                transition={{
-                  duration: 0.3,
-                  ease: 'easeOut',
-                }}
-              >
-                {item.icon}
-                <span className="text-sm mt-2 font-poppins transition-colors duration-200">
-                  {item.name}
-                </span>
-              </motion.div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </motion.section>
+  <div data-aos="fade-down" data-aos-delay="200" className="flex flex-col items-center justify-center w-full h-auto">
+  <SkillsCard />
+</div>
+</motion.section>
+
   );
 };

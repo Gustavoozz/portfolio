@@ -16,7 +16,7 @@ const HomePage = () => {
 
   return (
     <main id='home' className="bg-transparent flex flex-col min-h-screen">
-      <div className="flex flex-grow items-center justify-center mt-4 px-8 sm:px-20">
+      <div className="flex flex-grow items-center justify-center mt-0 px-8 sm:px-20">
         <div className="flex flex-col gap-4 items-center">
           <AvatarContainer
             width={250}

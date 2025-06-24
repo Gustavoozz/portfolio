@@ -7,7 +7,7 @@ interface AvatarContainerProps {
     width: number;
     height: number;
     styles?: string;
-    tooltipText?: string; // Texto para o tooltip
+    tooltipText?: string; 
 }
 
 export const AvatarContainer: React.FC<AvatarContainerProps> = ({

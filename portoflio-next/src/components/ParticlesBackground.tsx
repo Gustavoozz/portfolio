@@ -38,7 +38,7 @@ export default function ParticlesBackground() {
     },
     particles: {
       number: {
-        value: 100,
+        value: 200,
         density: {
           enable: true,
           width: 1920,
@@ -59,7 +59,7 @@ export default function ParticlesBackground() {
       },
       move: {
         enable: true,
-        speed: 0.9,
+        speed: 1.2,
         direction: "none",
         random: true,
         straight: false,
