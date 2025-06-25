@@ -87,7 +87,7 @@ export const SkillsCard = () => {
     <div className="w-[80%] px-4 sm:px-0 flex flex-col justify-center items-center">
       {Object.entries(grouped).map(([category, skills]) => (
         <div key={category} className="mb-16 flex flex-col justify-center items-center">
-          <h2 className="text-xl sm:text-2xl font-bold mb-4 font-poppins text-white">{category}</h2>
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 font-poppins text-black dark:text-white">{category}</h2>
 
           <div className="flex flex-wrap justify-center gap-4">
             {skills.map((skill, index) => (
