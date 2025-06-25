@@ -23,6 +23,7 @@ export const Nav = () => {
   const navItems = [
     { name: 'Home', id: 'home' },
     { name: 'Skills', id: 'skills' },
+    { name: 'Trajetória', id: 'academic' },
     // { name: 'Sobre mim', id: 'about' },
     { name: 'Projetos', id: 'projects' },
   ];
@@ -54,13 +55,13 @@ export const Nav = () => {
   );
 
   return (
-    <nav className="w-full p-2 sm:p-4 bg-transparent bg-opacity-90 dark:bg-opacity-90">
+    <nav className="w-full p-2 sm:p-4 bg-transparent bg-opacity-90 dark:bg-opacity-90 ">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex-none">
           <h1 className="font-poppins font-bold text-2xl">GM</h1>
         </div>
 
-        <div className="sm:hidden">
+        <div className="sm:hidden uppercase">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"

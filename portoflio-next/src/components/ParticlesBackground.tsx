@@ -55,7 +55,7 @@ export default function ParticlesBackground() {
         value: { min: 0.3, max: 0.8 },
       },
       size: {
-        value: { min: 0.5, max: 1.2 },
+        value: { min: 0.7, max: 1.7 },
       },
       move: {
         enable: true,
