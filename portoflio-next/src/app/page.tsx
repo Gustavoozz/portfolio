@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { motion } from 'framer-motion';
 import { AcademicSection } from '@/components/sections/academic/page';
+import { AboutSection } from '@/components/sections/about/page';
 
 const scrollToHome = () => {
   const section = document.getElementById('home');
@@ -28,8 +29,8 @@ export default function RootPage() {
   const sections = [
     <HomePage key="home" />,
     <SkillSection key="skills" />,
-    <AcademicSection key="academic"/>,
     // <AboutSection key="about" />,
+    <AcademicSection key="academic"/>,
     <ProjectSection key="projects" />
   ];
 

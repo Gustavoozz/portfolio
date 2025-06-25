@@ -12,6 +12,15 @@ export const Title: React.FC<TitleProps> = ({ children, styles }) => {
   );
 };
 
+export const TitleWhite: React.FC<TitleProps> = ({ children, styles }) => {
+  return (
+    <h1 className={`font-poppins text-3xl sm:text-xl text-left font-bold ${styles}`}>
+      {children}
+    </h1>
+  );
+};
+
+
 interface SubTitleProps {
   children: string;
   styles?: string;
@@ -19,7 +28,15 @@ interface SubTitleProps {
 
 export const SubTitle: React.FC<SubTitleProps> = ({ children, styles }) => {
   return (
-    <span className={`text-3xl font-poppins sm:text-5xl inline-flex animate-shine  dark:bg-[linear-gradient(110deg,#0052A2,45%,#02386E,55%,#00498D)] bg-[linear-gradient(110deg,#6366f1,45%,#0ea5e9,55%,#4f46e5)] bg-[length:200%_100%] font-bold text-transparent bg-clip-text text-center bg-indigo-600 ${styles}`}>
+    <span className={`text-3xl font-poppins sm:text-5xl inline-flex animate-shine dark:bg-[linear-gradient(110deg,#0052A2,45%,#02386E,55%,#00498D)] bg-[linear-gradient(110deg,#6366f1,45%,#0ea5e9,55%,#4f46e5)] bg-[length:200%_100%] font-bold text-transparent bg-clip-text text-center bg-indigo-600 ${styles}`}>
+      {children}
+    </span>
+  );
+};
+
+export const SubTitleLittle: React.FC<SubTitleProps> = ({ children, styles }) => {
+  return (
+    <span className={`text-3xl font-poppins sm:text-xl inline-flex animate-shine dark:bg-[linear-gradient(110deg,#0052A2,45%,#02386E,55%,#00498D)] bg-[linear-gradient(110deg,#6366f1,45%,#0ea5e9,55%,#4f46e5)] bg-[length:200%_100%] font-bold text-transparent bg-clip-text text-center bg-indigo-600 ${styles}`}>
       {children}
     </span>
   );
@@ -37,6 +54,17 @@ export const Paragraph: React.FC<ParagraphProps> = ({ children, styles }) => {
     </p>
   );
 };
+
+export const ParagraphLittle: React.FC<ParagraphProps> = ({ children, styles }) => {
+  return (
+    <p className={`font-poppins text-left text-md sm:text-md font-thin text-mainColors-light ${styles}`}>
+      {children}
+    </p>
+  );
+};
+
+
+
 
 interface ParagraphTypeWriterProps {
   children: React.ReactNode;

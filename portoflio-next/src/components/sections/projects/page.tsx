@@ -134,7 +134,7 @@ export const ProjectSection = () => {
   ]);
 
   return (
-    <div data-aos="zoom-in" data-aos-delay="200" className="flex flex-col">
+    <div data-aos="zoom-in" data-aos-delay="200" className="flex flex-col py-0 sm:py-60">
       <div className="w-full h-[150px] flex justify-center mb-0 sm:mb-12">
         <SubTitle styles="font-bold font-poppins text-[34px] mt-20 text-center">
           Projetos

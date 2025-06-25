@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { AvatarContainer } from '@/components/avatar/avatar';
 import { Paragraph, SubTitle } from '@/components/text/text';
+import AOS from 'aos';
 
 export const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,12 +27,12 @@ export const AboutSection = () => {
   return (
     <motion.section
       id='about'
-      className='w-full h-[550px] mb-20 mt-0 overflow-hidden'
+      className='w-full h-[550px] mb-60 mt-0 overflow-hidden'
       initial={{ opacity: 0, y: 50 }}
       animate={isVisible ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      <div className='flex flex-col items-center justify-center'>
+      <div data-aos="fade-up" className='flex flex-col items-center justify-center'>
         <SubTitle styles='font-bold font-poppins text-[34px] mt-10 mb-24'>Sobre mim...</SubTitle>
 
         <div className='flex items-start justify-between'>

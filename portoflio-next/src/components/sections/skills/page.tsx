@@ -98,7 +98,7 @@ export const SkillSection = () => {
   return (
   <motion.section
   id="skills"
-  className="flex flex-col justify-center items-center w-full min-h-screen py-24"
+  className="flex flex-col justify-center items-center w-full min-h-screen py-0 sm:py-60"
   initial={{ opacity: 0, y: 50 }}
   animate={isVisible ? { opacity: 1, y: 0 } : {}}
   transition={{ duration: 0.8, ease: 'easeOut' }}
