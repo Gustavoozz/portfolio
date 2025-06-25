@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { AvatarContainer } from '@/components/avatar/avatar';
 import { Paragraph, SubTitle } from '@/components/text/text';
-import AOS from 'aos';
 
 export const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);

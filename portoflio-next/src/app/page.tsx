@@ -11,7 +11,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { motion } from 'framer-motion';
 import { AcademicSection } from '@/components/sections/academic/page';
-import { AboutSection } from '@/components/sections/about/page';
 
 const scrollToHome = () => {
   const section = document.getElementById('home');
