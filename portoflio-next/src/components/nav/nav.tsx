@@ -88,7 +88,7 @@ export const Nav = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 50 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-0 right-0 h-screen w-[50%] z-40 bg-mainColors-lightGray dark:bg-transparent sm:hidden"
+            className="fixed rounded-2xl top-0 right-0 h-screen w-[50%] z-40 bg-mainColors-lightGray dark:bg-black sm:hidden"
           >
             <div className="h-full px-4 flex flex-col justify-start py-12">
               <ul className="flex flex-col gap-4">
