@@ -1,11 +1,12 @@
-import { SiTypescript, SiJavascript, SiShadcnui, SiChakraui, SiRadixui, SiFramer, SiCsharp, SiMicrosoftsqlserver, SiStyledcomponents, SiCypress, SiMicrosoftazure, SiExpo, SiAxios } from "react-icons/si";
+import { SiTypescript, SiJavascript, SiShadcnui, SiChakraui, SiRadixui, SiFramer, SiCsharp, SiMicrosoftsqlserver, SiStyledcomponents, SiCypress, SiMicrosoftazure, SiExpo, SiAxios, SiPandas, SiPytest, SiSelenium } from "react-icons/si";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { FaReact, FaCss3Alt, FaHtml5 } from "react-icons/fa";
+import { FaReact, FaCss3Alt, FaHtml5, FaPython, FaDocker, FaMicrosoft, FaFileExcel } from "react-icons/fa";
 import { DiMongodb } from "react-icons/di";
 import { FaGitAlt } from "react-icons/fa6";
 import { IoLogoNodejs } from "react-icons/io5";
 import { FaNpm } from "react-icons/fa";
 import { BiSolidFileJson } from "react-icons/bi";
+import { BsFileEarmarkBarGraphFill } from "react-icons/bs";
 
 
 export const skills = [
@@ -124,4 +125,44 @@ export const skills = [
     icon: <SiExpo size={40} />,
     category: "Outros",
   },
+  {
+    name: "Python",
+    icon: <FaPython size={40}/>,
+    category: "Back-end"
+  },
+  {
+    name: "Docker",
+    icon: <FaDocker size={40}/>,
+    category: "Outros"
+  },
+  {
+    name: "Power Automate",
+    icon: <FaMicrosoft size={40}/>,
+    category: "Outros"
+  },
+  {
+    name: "Power BI",
+    icon: <BsFileEarmarkBarGraphFill size={40}/>,
+    category: "Outros"
+  },
+  {
+    name: "Excel",
+    icon: <FaFileExcel size={40}/>,
+    category: "Outros"
+  },
+  {
+    name: "Pandas",
+    icon: <SiPandas size={40}/>,
+    category: "Back-end"
+  },
+  {
+    name: "Pytest",
+    icon: <SiPytest size={40}/>,
+    category: "Outros"
+  },
+  {
+    name: "Selenium",
+    icon: <SiSelenium size={40}/>,
+    category: "Outros"
+  }
 ];

@@ -23,9 +23,10 @@ export const Nav = () => {
   const navItems = [
     { name: 'Home', id: 'home' },
     { name: 'Skills', id: 'skills' },
-    { name: 'Trajetória', id: 'academic' },
+    { name: 'Academic', id: 'academic' },
     // { name: 'Sobre mim', id: 'about' },
-    { name: 'Projetos', id: 'projects' },
+    { name: 'Work', id: 'work'},
+    { name: 'Projects', id: 'projects' },
   ];
 
   const NavItem = ({

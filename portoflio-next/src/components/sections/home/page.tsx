@@ -38,7 +38,7 @@ const HomePage = () => {
           <ParagraphTypeWriter styles="w-full max-w-screen-md w-screen h-16">
             <span>
               <Typewriter
-                words={[' Eu sou Gustavo, tenho 20 anos e sou apaixonado por tecnologia.', 'Atuo nas áreas de front-end e back-end, sempre buscando aprender mais.', ' Estou aberto a novos desafios e pronto para colaborar em projetos incríveis na área de tecnologia...']}
+                words={['Eu sou Gustavo, tenho 21 anos e sou apaixonado por tecnologia.', 'Sou desenvolvedor Fullstack e tenho experiência profissional na área de RPA e Dados...', ' Estou aberto a novos desafios e pronto para colaborar em projetos incríveis na área de tecnologia...']}
                 loop={false}
                 cursor
                 cursorStyle='_'
