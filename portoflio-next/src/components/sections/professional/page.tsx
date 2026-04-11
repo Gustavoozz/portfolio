@@ -1,5 +1,5 @@
 import { SubTitle } from "@/components/text/text"
-import { AcademicTimeLine, WorkTimeLine } from "@/components/timeline/timeline"
+import { WorkTimeLine } from "@/components/timeline/timeline"
 import { useEffect, useState } from "react";
 import { motion } from 'framer-motion';
 import AOS from 'aos';
