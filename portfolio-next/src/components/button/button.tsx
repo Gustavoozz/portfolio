@@ -127,8 +127,8 @@ const handleDownload = () => {
 export const ButtonDownloadCV = () => {
   return (
     <a
-      href="/pdf/Currículo - Gustavo Magalhães (2).pdf"
-      download="Currículo - Gustavo Magalhães.pdf"
+      href="/pdf/Gustavo_CV.pdf"
+      download="Gustavo_CV.pdf"
       onClick={handleDownload}
       className="group/button relative inline-flex items-center justify-center overflow-hidden bg-sky-500 dark:bg-blue-500/30 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-blue-600/50 border border-white/20 rounded-xl font-poppins mt-0"
     >
